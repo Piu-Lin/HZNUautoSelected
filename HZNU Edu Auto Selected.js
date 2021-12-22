@@ -9,7 +9,7 @@ for (i = 1; i < lens; i++) {
         await sleep(10)
         x+=1
         if (x>500){
-            alert("请检查网络连接");
+            alert("如当前选项已评完请选择自动提交脚本，否则请检查网络连接");
             throw SyntaxError()
         }
     }

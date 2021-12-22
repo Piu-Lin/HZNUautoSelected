@@ -43,8 +43,29 @@ $(':button[id=btn_ok]').click()
 
 为保证用户有**修改评价**的机会。自动选择完成后需逐个自行单击提交。
 
+如不需要修改评价可使用如下代码：
 
-
+```js
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+var lens=$('#tempGrid>tbody').children("tr").length;
+for (i = 1; i < lens; i++) {
+    $(`#${i}`).click()
+    var x=1
+    while($(':radio[data-dyf=100]').length == 0 ){
+        await sleep(10)
+        x+=1
+        if (x>100){
+            break
+        }
+    }
+    $(':radio[data-dyf=100]').attr('checked',true);
+    $(':radio[data-dyf=80]').eq(0).attr('checked',true);
+    $(':button[id=btn_xspj_tj]').click()
+    $(':button[id=btn_ok]').click()
+}
+```
 
 ## 开发者的话
 

@@ -4,13 +4,16 @@ function sleep (time) {
 var lens=$('#tempGrid>tbody').children("tr").length;
 for (i = 1; i < lens; i++) {
     $(`#${i}`).click()
-    await sleep(300)
-    if (typeof($(':button[id=btn_xspj_tj]')[0])=='undefined'){
-        console.log("jump")
-        continue
+    var x=1
+    while($(':radio[data-dyf=100]').length == 0 ){
+        await sleep(10)
+        x+=1
+        if (x>100){
+            break
+        }
     }
-    if(typeof($(':button[id=btn_xspj_tj]')[0])=='object'){
-        // $(':button[id=btn_xspj_tj]')[0].click()
-        console.log("asd")
-    }
+    $(':radio[data-dyf=100]').attr('checked',true);
+    $(':radio[data-dyf=80]').eq(0).attr('checked',true);
+    $(':button[id=btn_xspj_tj]').click()
+    $(':button[id=btn_ok]').click()
 }
