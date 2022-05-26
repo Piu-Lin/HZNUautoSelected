@@ -32,6 +32,7 @@ for (i = 1; i < lens; i++) {
     }
     $(':radio[data-dyf=100]').attr('checked',true);
     $(':radio[data-dyf=80]').eq(0).attr('checked',true);
+    $(':button[id=btn_xspj_bc]').data("enter","1");
     $(':button[id=btn_xspj_bc]').click()
 }
 $(':button[id=btn_ok]').click()
@@ -62,6 +63,7 @@ for (i = 1; i < lens; i++) {
     }
     $(':radio[data-dyf=100]').attr('checked',true);
     $(':radio[data-dyf=80]').eq(0).attr('checked',true);
+    $(':button[id=btn_xspj_tj]').data("enter","1");
     $(':button[id=btn_xspj_tj]').click()
     $(':button[id=btn_ok]').click()
 }
